@@ -32,14 +32,25 @@ h2 {
     margin-bottom: 20px;
 }
 
+h2, .open-close-ico {
+    display: inline-block;
+    vertical-align: top;
+}
+
+svg {
+    width: 50px;
+    height: 30px;
+}
+
 section {
     padding: 20px 0;
     transition: all .4s linear;
 }
 
-section:hover {
+section:hover{
     color: var(--color-text-hover);
     cursor: pointer;
+    fill: var(--color-text-hover);
 }
 
 .img-box {
