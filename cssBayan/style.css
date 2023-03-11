@@ -1,3 +1,4 @@
+/* COMMON SETTINGS */
 :root {
     --color-bg: #F5F5EB;
     --color-text-hover: #4474C1;
@@ -10,34 +11,58 @@
 }
 
 body {
-    background-color: var(--color-bg);
     font-family: sans-serif;
+    background-color: var(--color-bg);
 }
 
 .container {
     max-width: 1920px;
     margin: 0 auto;
+    padding: 50px;
 }
 
+/* COMMON SETTINGS */
+
+/* STYLIZATION */
 h1,
 h2 {
     font-weight: 900;
+
 }
 
 h1 {
     padding: 40px 0 30px 0;
+    font-size: 2rem;
 }
 
 h2 {
     margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
-h2, .open-close-ico {
+h2,
+.open-close-ico {
     display: inline-block;
     vertical-align: top;
+    color: var(--color-text-hover);
+}
+
+.mems {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.open-close-ico {
+    display: flex;
 }
 
 svg {
+    opacity: 0;
     width: 50px;
     height: 30px;
 }
@@ -47,23 +72,19 @@ section {
     transition: all .4s linear;
 }
 
-section:hover{
+section:hover {
     color: var(--color-text-hover);
-    cursor: pointer;
+    /* cursor: pointer; */
     fill: var(--color-text-hover);
 }
 
 .img-box {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     overflow: hidden;
-    margin-left: 10%;
     display: none;
-}
-
-.img-box:nth-child(4) {
-    display: block;
+    margin: 0 auto;
 }
 
 .img-box img {
@@ -76,12 +97,88 @@ section:hover{
     height: 100%;
 }
 
-@media only screen and (max-width: 1920px) {
-    hr {
-        width: 50%;
-    }
+/* STYLIZATION */
+
+/* INTERACTIVE */
+input {
+    display: none;
+}
+
+input:checked~.img-box,
+input:checked~* h2,
+input:checked .svg1 {
+    display: block;
+    color: var(--color-text-black);
+    display: block;
+}
+
+.mems:hover h2,
+.mems:hover svg {
+    color: var(--color-text-black);
+    opacity: 1;
+
+}
+
+.mems:hover * {
+    cursor: pointer;
+}
+
+.svg-2 {
+   /* display: none; */
+}
+/* INTERACTIVE */
+
+@media screen and (min-width: 1080px) {
+
     section:hover .img-box {
         display: block;
     }
 
+    html,
+    body {
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (max-width: 1180px) {
+
+    html,
+    body {
+        font-size: 13px;
+    }
+
+    .mems {
+        width: 70%;
+    }
+
+    .container {
+        padding: 20px 20px;
+    }
+
+    .img-box {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+
+    html,
+    body {
+        font-size: 10px;
+    }
+
+    .mems {
+        width: 100%;
+    }
+
+    .container {
+        padding: 20px 20px;
+    }
+
+    .img-box {
+        width: 200px;
+        height: 200px;
+    }
 }
